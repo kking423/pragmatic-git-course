@@ -74,8 +74,7 @@ def play_game(player_1, player_2):
 
 def get_computer_roll(roll_names):
     names = roll_names + 2*[r for r in roll_names if r.startswith('s')]
-    roll2 = random.choice(names)
-    return roll2
+    return random.choice(names)
 
 
 def find_winner(wins, names):
@@ -89,7 +88,6 @@ def find_winner(wins, names):
 
 
 def check_for_winning_throw(player_1, player_2, roll1, roll2):
-    winner = None
     if roll1 == roll2:
         print("The play was tied!")
 
@@ -99,7 +97,7 @@ def check_for_winning_throw(player_1, player_2, roll1, roll2):
     elif roll2 in outcome.get('defeated_by'):
         return player_2
 
-    return winner
+    return None
 
 
 def get_roll(player_name, roll_names):
